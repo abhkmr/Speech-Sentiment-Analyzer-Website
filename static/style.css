@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+.buttonthispage{
+   color:white;
+    background-color:crimson;
+    padding: 25px;
+    
+    font-size: 20px;
+    border-radius: 15px;
+    
+    margin: auto;
+}
+.button{
+    
+    /* position: absolute; */
+    margin-top: 250px;
+    
+}
+.one{
+    border-radius: 15px;
+    font-size: 20px;
+    /* margin:auto; */
+    color: white;
+    background-color: crimson;
+    padding: 25px;
+}
+.two{
+    border-radius: 15px;
+    font-size: 20px;
+    /* margin-right:3000px; */
+    color: white;
+    background-color: crimson;
+    padding: 25px;
+}
+.buttonthatpage{
+    border-radius: 15px;
+    font-size: 20px;
+    /* margin-right:3000px; */
+    color: white;
+    background-color: crimson;
+    padding: 25px;
+}
+ h2, h3, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 60px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    text-transform: uppercase;
+  }
+  p{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #222;
+    text-transform: uppercase;
+  }
+body{
+    
+    font-family: 'Noto Serif', serif;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+.custom-file-upload:hover{
+    border: 1px solid crimson;
+    background-color: crimson;
+    color : white;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}

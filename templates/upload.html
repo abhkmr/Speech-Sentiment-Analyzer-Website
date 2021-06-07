@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Sentiment Analyzer</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+    <link href="{{ url_for('static', path='/style.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">  
+</head>
+<body>
+    <h2>Voice Sentiment Analyzer</h2>
+    <div id="upload_space" class = "wrapper">
+        <label for="file" class="custom-file-upload" id="uploadbut">SELECT AUDIO</label>
+        <input type="file" id="file" name="myfile" onchange = "hasUpload()"multiple>
+        <p id = "errormessage"></p>
+        <br>
+        <button class="button one" onclick="performSentiment()">Get Emotion?</button>
+        <a href="/"><button class="button two">Recording</button></a>
+    </div>
+    
+</body>
+<script>
+    upload = document.getElementById('uploadbut');
+    errormessage = document.getElementById('errormessage');
+    file = document.getElementById('file');
+   
+    
+    function hasUpload() {
+            
+            
+            if(file.files.length == 0 ){
+                errormessage.innerHTML = "No audio file selected";
+            } else {
+                errormessage.innerHTML = "audio file " + file.files.item(0).name+ " is selected";
+            }
+        }
+    function performSentiment(){
+    var files = document.getElementById("file").files
+    var formData = new FormData();
+    var endpoint = '/analysis';
+    formData.append('audio', files[0])
+    $.ajax({
+    type: 'POST',
+    url: endpoint,
+    data: formData,
+    contentType: false,
+    cache: false,
+    processData: false,
+    success: function(data) {
+      swal("Your Emotion is", data.text);
+    }
+});
+    }</script>
+</html>
